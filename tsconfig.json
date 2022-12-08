@@ -11,7 +11,6 @@
     ],
     "allowJs": true,
     "jsx": "react-native",
-    "noEmit": true,
     "isolatedModules": true,
     "strict": true,
     "moduleResolution": "node",
@@ -19,10 +18,11 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "alwaysStrict": true,
     "noUnusedLocals": true,
-    "noImplicitReturns": true
+    "noImplicitReturns": true,
+    "noEmit": true
   },
   "exclude": [
     "node_modules",
