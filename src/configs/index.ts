@@ -2,5 +2,6 @@ import COLORS from "./colors";
 import FONTS from "./fonts";
 import API from "./api";
 import ENV from "./env";
+import IMAGES from "./images";
 
-export { COLORS, FONTS, API, ENV };
+export { COLORS, FONTS, API, ENV, IMAGES };

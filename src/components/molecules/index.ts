@@ -1,3 +1,4 @@
 import Container from "./Container";
+import SlideScreen from "./SlideScreen";
 
-export { Container };
+export { Container, SlideScreen };

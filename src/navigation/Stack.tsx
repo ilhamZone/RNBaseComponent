@@ -6,15 +6,17 @@ import {
 
 import Login from "../screens/Login";
 import Home from "../screens/Home";
+import Intro from "../screens/Intro";
 
 const { Navigator, Screen } = createStackNavigator();
 
 const Stack = () => {
   return (
     <Navigator
-      initialRouteName="Login"
+      initialRouteName="Intro"
       screenOptions={{ ...TransitionPresets.SlideFromRightIOS }}
     >
+      <Screen name="Intro" component={Intro} options={{ header: () => null }} />
       <Screen name="Login" component={Login} options={{ header: () => null }} />
       <Screen name="Home" component={Home} />
     </Navigator>
