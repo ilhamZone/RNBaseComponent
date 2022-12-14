@@ -5,6 +5,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  view: {
+    backgroundColor: "white",
+  },
 });
 
 export default styles;
