@@ -83,6 +83,7 @@ const Component = ({ data, scrollEnabled, onPress, onPressSkip }: Props) => {
         <Button
           onPress={isLast ? onPress : _nextScreen}
           title={data?.[Number(currentIndex.toFixed())]?.buttonLabel}
+          widthFull
         />
       </View>
     </View>

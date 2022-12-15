@@ -4,6 +4,7 @@ import {
   createBottomTabNavigator,
 } from "@react-navigation/bottom-tabs";
 import { Platform, SafeAreaView, TouchableOpacity, View } from "react-native";
+import { isIPhoneWithMonobrow } from "react-native-safearea-height";
 
 import { Space, Text } from "../components/atom";
 import { COLORS } from "../configs";
@@ -54,8 +55,15 @@ function MyTabBar({ state, descriptors, navigation }: BottomTabBarProps) {
     },
   ];
 
+  const isIphoneMonoBrow = isIPhoneWithMonobrow();
+
   return (
-    <SafeAreaView style={{ backgroundColor: COLORS.black1D }}>
+    <SafeAreaView
+      style={{
+        backgroundColor: COLORS.white,
+        marginTop: isIphoneMonoBrow ? -35 : 0,
+      }}
+    >
       <View style={styles.wrapper}>
         {state.routes.map((route: any, index: number) => {
           const { options } = descriptors[route.key] as any;
@@ -131,12 +139,12 @@ const BottomTabs = () => {
         <Tab.Screen
           name="Inbox"
           component={NotificationScreen}
-          options={{ title: "Notifikasi" }}
+          options={{ title: "Notifikasi", header: () => null }}
         />
         <Tab.Screen
           name="Akun"
           component={ProfileScreen}
-          options={{ title: "Profil" }}
+          options={{ title: "Profil", header: () => null }}
         />
       </Tab.Navigator>
     </>

@@ -10,7 +10,7 @@ import { HeaderLogin } from "../../components/organism";
 const Login = () => {
   const nav: any = useNavigation();
   return (
-    <Container translucent barStyle="light-content">
+    <Container transculent barStyle="light-content">
       <HeaderLogin />
       <View
         style={{

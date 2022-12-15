@@ -1,7 +1,7 @@
 import React, { memo, ReactNode } from "react";
 import { ImageBackground, Platform, View, ViewStyle } from "react-native";
 import { getStatusBarHeight } from "react-native-safearea-height";
-import { IMAGES } from "../../../configs";
+import { COLORS, IMAGES } from "../../../configs";
 import { ChevronLeft } from "../../../configs/svgs";
 import Space from "../Space";
 
@@ -21,8 +21,9 @@ const Component = ({ children, backButton, style }: Props) => {
       <Space height={statusBarHeight + isAndroid} />
       {backButton && (
         <ChevronLeft
-          height={16}
-          width={10}
+          stroke={COLORS.blue00}
+          height={26}
+          width={26}
           style={[styles.backBtn, { top: statusBarHeight + isAndroid + 8 }]}
         />
       )}
