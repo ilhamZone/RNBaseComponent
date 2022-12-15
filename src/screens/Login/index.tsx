@@ -2,6 +2,7 @@ import React from "react";
 import { TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Text } from "../../components/atom";
+import { Mcq } from "../../components/atom";
 import { Container } from "../../components/molecules";
 
 import styles from "./styles";
@@ -15,6 +16,7 @@ const Login = () => {
         <Text size={20} type="bold">
           Login
         </Text>
+        <Mcq />
       </TouchableOpacity>
     </Container>
   );
