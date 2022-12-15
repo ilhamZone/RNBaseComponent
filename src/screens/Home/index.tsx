@@ -17,6 +17,7 @@ const Home = () => {
 
   return (
     <Container>
+      <Text>okok</Text>
       {data?.map((user: any, index: number) => (
         <Text key={index}>{user?.first_name}</Text>
       ))}

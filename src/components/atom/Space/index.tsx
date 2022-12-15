@@ -1,8 +1,6 @@
 import React, { memo } from "react";
 import { View } from "react-native";
 
-//  import styles from "./styles";
-
 interface Props {
   height: number;
   width: number;
