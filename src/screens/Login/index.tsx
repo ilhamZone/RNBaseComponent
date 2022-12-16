@@ -1,7 +1,8 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { View } from "react-native";
-import { Text } from "../../components/atom";
+import { Mcq, Text } from "../../components/atom";
+
 import { Container } from "../../components/molecules";
 import { HeaderLogin } from "../../components/organism";
 
@@ -21,6 +22,7 @@ const Login = () => {
         }}
       >
         <Text onPress={() => nav.navigate("HomeNavigation")}>To Home</Text>
+        <Mcq type="Wrong" />
       </View>
     </Container>
   );
