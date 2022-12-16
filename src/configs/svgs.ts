@@ -4,6 +4,7 @@ import IconNavHome from "../assets/svgs/ic24_navbar_beranda.svg";
 import IconNavNotification from "../assets/svgs/ic24_navbar_notif.svg";
 import IconNavProfile from "../assets/svgs/ic24_navbar_profil.svg";
 import IconNavPurchase from "../assets/svgs/ic24_navbar_pembelian.svg";
+import IconCheck from "../assets/svgs/ic24_check.svg";
 import IconClose from "../assets/svgs/ic24_x.svg";
 
 export {
@@ -13,5 +14,6 @@ export {
   IconNavNotification,
   IconNavProfile,
   IconNavPurchase,
+  IconCheck,
   IconClose,
 };
