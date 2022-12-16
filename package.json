@@ -12,7 +12,8 @@
     "build:aab": "cd ./android && ./gradlew clean app:bundleRelease",
     "logcat": "adb logcat | grep \"NODEJS-MOBILE\\|NODEJS-RN\\|AndroidRuntime\\|ReactNative\"",
     "iphone8": "react-native run-ios '--simulator=iPhone 8'",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint-check": "eslint --ext .tsx,.ts,.js  ./src --fix"
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.5.1",
