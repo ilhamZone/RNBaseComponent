@@ -29,6 +29,8 @@ interface Props {
   resizeIcon?: "cover" | "contain" | "stretch" | "repeat" | "center";
   iconSize?: number;
   iconColor?: string;
+  widthFull?: boolean;
+  paddingHorizontal?: number;
 }
 
 const Component = ({
@@ -48,6 +50,8 @@ const Component = ({
   iconSize,
   textColor,
   color,
+  widthFull,
+  paddingHorizontal,
 }: Props) => {
   return (
     <TouchableOpacity
@@ -58,9 +62,10 @@ const Component = ({
         styles.container,
         {
           height: height || 44,
-          width: width || "100%",
+          width: widthFull ? "100%" : width,
           borderRadius: borderRadius || 30,
           backgroundColor: color || COLORS.blue00,
+          paddingHorizontal: paddingHorizontal,
         },
         style,
         disabled && { backgroundColor: COLORS.greyCE },

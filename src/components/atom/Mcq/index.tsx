@@ -6,27 +6,28 @@ import styles from "./styles";
 
 interface Props {
   onPress?: () => void;
-  type?: "NeutralWhite" | "Danger" | "Success" | "Neutral20" | "Orange";
+  type?: "Default" | "Correct" | "Wrong" | "Disable" | "Selected";
   color: string;
+  bordercolor: string;
   size: number;
   opacity: number;
   textAlign: "left" | "center" | "right";
 }
 const Component = ({ onPress, type }: Props) => {
   const _type = () => {
-    if (type === "NeutralWhite") {
-      return COLORS.NeutralWhite;
+    if (type === "Default") {
+      return { bgColor: COLORS.neutralWhite, borderColor: COLORS.neutralWhite };
     }
-    if (type === "Success") {
-      return COLORS.Success;
+    if (type === "Wrong") {
+      return { bgColor: COLORS.success, borderColor: COLORS.succesLight2 };
     }
-    if (type === "Danger") {
-      return COLORS.Danger;
+    if (type === "Correct") {
+      return { bgColor: COLORS.danger, borderColor: COLORS.dangerBase };
     }
-    if (type === "Neutral20") {
-      return COLORS.Neutral20;
+    if (type === "Disable") {
+      return { bgColor: COLORS.neutral20, borderColor: COLORS.neutral20 };
     }
-    return COLORS.Orange;
+    return { bgColor: COLORS.orange, borderColor: COLORS.orangeBase };
   };
   return (
     <View style={styles.container}>
@@ -34,8 +35,8 @@ const Component = ({ onPress, type }: Props) => {
         style={[
           styles.button,
           {
-            backgroundColor: `${_type()}`,
-            borderColor: `${_type()}`,
+            backgroundColor: `${_type().bgColor}`,
+            borderColor: `${_type().borderColor}`,
           },
         ]}
         activeOpacity={0.6}
@@ -48,8 +49,9 @@ const Component = ({ onPress, type }: Props) => {
   );
 };
 Component.defaultProps = {
-  type: "Succes",
-  color: COLORS.Success,
+  type: "Default",
+  color: COLORS.success,
+  bordercolor: COLORS.succesLight2,
   size: 16,
   opacity: 1,
   textAlign: "left",

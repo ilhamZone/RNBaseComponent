@@ -90,7 +90,7 @@ const Component = ({ onPress, type, size }: Props) => {
 };
 Component.defaultProps = {
   type: "Succes",
-  color: COLORS.Success,
+  color: COLORS.succesBase,
   size: 14,
   opacity: 1,
   textAlign: "left",
