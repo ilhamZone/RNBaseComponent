@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { View } from "react-native";
-import { Mcq, Text } from "../../components/atom";
+import { Chips, Mcq, Text } from "../../components/atom";
 import { BottomSheet } from "../../components/atom";
 
 import { Container } from "../../components/molecules";
@@ -23,6 +23,7 @@ const Login = () => {
         }}
       >
         <Text onPress={() => nav.navigate("HomeNavigation")}>To Home</Text>
+        <Chips type="light-yellow" size="14" />
         <Mcq />
         <BottomSheet />
       </View>

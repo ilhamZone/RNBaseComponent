@@ -7,6 +7,7 @@ import Mcq from "./Mcq";
 import HeaderContent from "./HeaderContent";
 import HeaderStatic from "./HeaderStatic";
 import BottomSheet from "./BottomSheet";
+import Chips from "./Chips";
 
 export {
   Text,
@@ -18,4 +19,5 @@ export {
   HeaderStatic,
   Mcq,
   BottomSheet,
+  Chips,
 };
