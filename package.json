@@ -19,6 +19,8 @@
     "@react-navigation/bottom-tabs": "^6.5.1",
     "@react-navigation/native": "^6.0.16",
     "@react-navigation/stack": "^6.3.7",
+    "@rneui/base": "^4.0.0-rc.7",
+    "@rneui/themed": "^4.0.0-rc.7",
     "@tanstack/react-query": "^4.19.1",
     "axios": "^1.2.1",
     "eslint-plugin-prettier": "^4.2.1",
@@ -29,10 +31,10 @@
     "react-native-modal": "^13.0.1",
     "react-native-reanimated": "^2.13.0",
     "react-native-safe-area-context": "^4.4.1",
-    "react-native-vector-icons": "^9.2.0",
     "react-native-safearea-height": "^1.0.5",
     "react-native-screens": "^3.18.2",
-    "react-native-svg": "^13.6.0"
+    "react-native-svg": "^13.6.0",
+    "react-native-vector-icons": "^9.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
