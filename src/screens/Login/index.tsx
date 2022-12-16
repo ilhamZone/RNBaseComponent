@@ -22,7 +22,7 @@ const Login = () => {
         }}
       >
         <Text onPress={() => nav.navigate("HomeNavigation")}>To Home</Text>
-        <Mcq />
+        <Mcq type="Wrong" />
       </View>
     </Container>
   );

@@ -8,11 +8,14 @@ const colors = {
   blue002: "#002E6D",
   black4D: "#4D545C",
   greyA5: "#A5B0BB",
-  NeutralWhite: "#FFFFFF",
-  Success: "#E3FCE5",
-  Danger: "#FEE6E9",
-  Neutral20: "#E7EBEE",
-  Orange: "#FFF7D7 ",
+  neutralWhite: "#FFFFFF",
+  success: "#E3FCE5",
+  danger: "#FEE6E9",
+  neutral20: "#E7EBEE",
+  orange: "#FFF7D7 ",
+  succesLight1: "#09B95A",
+  dangerBase: "#D92037",
+  orangeBase: "#FF9E16",
 };
 
 export default colors;
