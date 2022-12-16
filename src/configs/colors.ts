@@ -24,7 +24,7 @@ const colors = {
   succesBase: "#019859",
   dangerLight2: "#FEE6E9",
   dangerBase: "#D92037",
-  secondaryLight1: "#D92037",
+  secondaryLight1: "#FFE784",
   warningBase: "#FF862F",
   orangeBase: "#FF9E16",
 };
