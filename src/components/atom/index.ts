@@ -6,6 +6,7 @@ import Space from "./Space";
 import Mcq from "./Mcq";
 import HeaderContent from "./HeaderContent";
 import HeaderStatic from "./HeaderStatic";
+import BottomSheet from "./BottomSheet";
 
 export {
   Text,
@@ -16,4 +17,5 @@ export {
   HeaderContent,
   HeaderStatic,
   Mcq,
+  BottomSheet,
 };
