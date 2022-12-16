@@ -2,7 +2,6 @@ import React, { memo } from "react";
 import { TouchableOpacity, View } from "react-native";
 import { COLORS } from "../../../configs";
 import Text from "../Text";
-
 import styles from "./styles";
 
 interface Props {
@@ -75,14 +74,13 @@ const Component = ({ onPress, type, size }: Props) => {
       >
         <Text
           size={_size().txtsize}
+          color={_type().txtColor}
           style={{
-            flex: 1,
-            paddingLeft: 32,
-            paddingRight: 32,
-            color: `${_type().txtColor}`,
+            paddingLeft: 12,
+            paddingRight: 11,
           }}
         >
-          abc
+          Label
         </Text>
       </TouchableOpacity>
     </View>

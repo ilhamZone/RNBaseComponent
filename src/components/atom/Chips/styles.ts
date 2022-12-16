@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     borderRadius: 20,
     alignItems: "center",
+
     left: 20,
     top: 20,
   },

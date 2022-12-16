@@ -23,7 +23,7 @@ const Login = () => {
         }}
       >
         <Text onPress={() => nav.navigate("HomeNavigation")}>To Home</Text>
-        <Chips type="light-yellow" size="14" />
+        <Chips type="light-green" size="14" />
         <Mcq />
         <BottomSheet />
       </View>
