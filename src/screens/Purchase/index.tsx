@@ -1,14 +1,22 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { Text, TextInput } from "react-native";
 import { HeaderStatic } from "../../components/atom";
 import { Container } from "../../components/molecules";
 
 const Component = () => {
+  const nav = useNavigation();
   return (
-    <Container translucent barStyle="light-content">
-      <HeaderStatic title="Title" />
-      <Text>Purchase</Text>
-      <TextInput />
+    <Container transculent>
+      <HeaderStatic
+        title="Purchase"
+        leftIcon="back"
+        rightButton
+        subTitle="Subtitle Purchase"
+        rightButtonProps={{
+          title: "Tekan",
+        }}
+        onPressLeftIcon={() => nav.goBack()}
+      />
     </Container>
   );
 };

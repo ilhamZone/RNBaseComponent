@@ -17,8 +17,6 @@ const styles = StyleSheet.create({
     marginBottom: -10,
   },
   backBtn: {
-    width: 30,
-    height: 30,
     position: "absolute",
     left: 20,
   },

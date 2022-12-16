@@ -10,6 +10,8 @@
     "lint": "tsc && eslint . --ext .js,.jsx,.ts,.tsx src --cache",
     "build:apk": "cd ./android && ./gradlew clean app:assembleRelease",
     "build:aab": "cd ./android && ./gradlew clean app:bundleRelease",
+    "logcat": "adb logcat | grep \"NODEJS-MOBILE\\|NODEJS-RN\\|AndroidRuntime\\|ReactNative\"",
+    "iphone8": "react-native run-ios '--simulator=iPhone 8'",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -23,6 +25,7 @@
     "react-native": "0.70.6",
     "react-native-bootsplash": "^4.4.0",
     "react-native-gesture-handler": "^2.8.0",
+    "react-native-modal": "^13.0.1",
     "react-native-reanimated": "^2.13.0",
     "react-native-safe-area-context": "^4.4.1",
     "react-native-vector-icons": "^9.2.0",
