@@ -1,10 +1,10 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { View } from "react-native";
-import { Chips, Mcq, Text } from "../../components/atom";
-import { BottomSheet } from "../../components/atom";
-import { HeaderLogin } from "../../components/organism";
+import { Card, Text, BottomSheet, Mcq } from "../../components/atom";
 import { Container } from "../../components/molecules";
+import { HeaderLogin } from "../../components/organism";
+import { Ic24CheckCircleBlue } from "../../configs/svgs";
 
 const Login = () => {
   const nav: any = useNavigation();
@@ -20,8 +20,10 @@ const Login = () => {
           flex: 1,
         }}
       >
-        <Text onPress={() => nav.navigate("HomeNavigation")}>To Home</Text>
-        <Chips type="solid-warning" size="14" />
+        <Card>
+          <Ic24CheckCircleBlue height={26} width={26} />
+          <Text onPress={() => nav.navigate("HomeNavigation")}>To Home</Text>
+        </Card>
         <Mcq />
         <BottomSheet />
       </View>
