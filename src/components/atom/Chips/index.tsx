@@ -77,7 +77,8 @@ const Component = ({ onPress, type, size }: Props) => {
           color={_type().txtColor}
           style={{
             paddingLeft: 12,
-            paddingRight: 11,
+            paddingRight: 12,
+            top: 1,
           }}
         >
           Label
