@@ -6,6 +6,7 @@ import Space from "./Space";
 import SearchBar from "./SearchBar";
 import HeaderStatic from "./HeaderStatic";
 import HeaderContent from "./HeaderContent";
+import SelectedBar from "./SelectedBar";
 
 export {
   Text,
@@ -16,4 +17,5 @@ export {
   SearchBar,
   HeaderStatic,
   HeaderContent,
+  SelectedBar,
 };

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { Text } from "../../components/atom";
+import { SelectedBar, Text } from "../../components/atom";
 import { SearchBar } from "../../components/atom";
 import { Container } from "../../components/molecules";
 
@@ -16,6 +16,7 @@ const Login = () => {
         <Text size={20} type="bold">
           Login
         </Text>
+        <SelectedBar size="big" />
       </TouchableOpacity>
     </Container>
   );
