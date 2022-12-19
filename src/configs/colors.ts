@@ -20,6 +20,16 @@ const colors = {
   neutral20: "#E7EBEE",
   orange: "#FFF7D7 ",
   succesLight1: "#09B95A",
+  neutral80: "#F5F7F9",
+  primaryLight3: "#EFF7FF",
+  primarybase: "#0055B8",
+  secondaryLight2: "#FFF7D7",
+  orangeDark1: "#995F0D",
+  succesLight2: "#E3FCE5",
+  succesBase: "#019859",
+  dangerLight2: "#FEE6E9",
+  secondaryLight1: "#FFE784",
+  warningBase: "#FF862F",
   orangeBase: "#FF9E16",
 };
 
