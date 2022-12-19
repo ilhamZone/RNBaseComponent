@@ -12,12 +12,15 @@
     "build:aab": "cd ./android && ./gradlew clean app:bundleRelease",
     "logcat": "adb logcat | grep \"NODEJS-MOBILE\\|NODEJS-RN\\|AndroidRuntime\\|ReactNative\"",
     "iphone8": "react-native run-ios '--simulator=iPhone 8'",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint-check": "eslint --ext .tsx,.ts,.js  ./src --fix"
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.5.1",
     "@react-navigation/native": "^6.0.16",
     "@react-navigation/stack": "^6.3.7",
+    "@rneui/base": "^4.0.0-rc.7",
+    "@rneui/themed": "^4.0.0-rc.7",
     "@tanstack/react-query": "^4.19.1",
     "axios": "^1.2.1",
     "eslint-plugin-prettier": "^4.2.1",
@@ -30,7 +33,8 @@
     "react-native-safe-area-context": "^4.4.1",
     "react-native-safearea-height": "^1.0.5",
     "react-native-screens": "^3.18.2",
-    "react-native-svg": "^13.6.0"
+    "react-native-svg": "^13.6.0",
+    "react-native-vector-icons": "^9.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

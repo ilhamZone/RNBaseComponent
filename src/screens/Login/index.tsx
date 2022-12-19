@@ -1,12 +1,10 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { View } from "react-native";
-import { Card, Text } from "../../components/atom";
+import { Card, Text, BottomSheet, Mcq } from "../../components/atom";
 import { Container } from "../../components/molecules";
 import { HeaderLogin } from "../../components/organism";
 import { Ic24CheckCircleBlue } from "../../configs/svgs";
-
-// import styles from "./styles";
 
 const Login = () => {
   const nav: any = useNavigation();
@@ -26,6 +24,8 @@ const Login = () => {
           <Ic24CheckCircleBlue height={26} width={26} />
           <Text onPress={() => nav.navigate("HomeNavigation")}>To Home</Text>
         </Card>
+        <Mcq />
+        <BottomSheet />
       </View>
     </Container>
   );
