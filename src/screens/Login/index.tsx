@@ -1,12 +1,10 @@
-import { useNavigation } from "@react-navigation/native";
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 import { View } from "react-native";
 import { Text } from "../../components/atom";
 
 import { Container } from "../../components/molecules";
 import { HeaderLogin } from "../../components/organism";
-
-// import styles from "./styles";
 
 const Login = () => {
   const nav: any = useNavigation();

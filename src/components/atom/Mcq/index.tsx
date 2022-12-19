@@ -19,7 +19,7 @@ const Component = ({ onPress, type }: Props) => {
       return { bgColor: COLORS.neutralWhite, borderColor: COLORS.neutralWhite };
     }
     if (type === "Wrong") {
-      return { bgColor: COLORS.success, borderColor: COLORS.succesLight1 };
+      return { bgColor: COLORS.success, borderColor: COLORS.succesLight2 };
     }
     if (type === "Correct") {
       return { bgColor: COLORS.danger, borderColor: COLORS.dangerBase };
@@ -51,7 +51,7 @@ const Component = ({ onPress, type }: Props) => {
 Component.defaultProps = {
   type: "Default",
   color: COLORS.success,
-  bordercolor: COLORS.succesLight1,
+  bordercolor: COLORS.succesLight2,
   size: 16,
   opacity: 1,
   textAlign: "left",
