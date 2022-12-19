@@ -8,7 +8,7 @@ const { width } = Dimensions.get("window");
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.main,
+    backgroundColor: COLORS.white,
   },
   slider: {
     flex: 1,
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   },
   textDesc: {
     fontFamily: FONTS.regular,
-    color: COLORS.main,
+    color: COLORS.white,
     fontSize: 16,
     textAlign: "center",
     lineHeight: 24,

@@ -1,10 +1,10 @@
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
-    borderRadius: 10,
     justifyContent: "center",
+    paddingBottom: Platform.OS === "ios" ? 2 : 0,
   },
   wrapTitle: {
     flexDirection: "row",
