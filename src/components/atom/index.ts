@@ -3,10 +3,9 @@ import Dot from "./Dot";
 import SlideItem from "./SlideItem";
 import Button from "./Button";
 import Space from "./Space";
-import Mcq from "./Mcq";
-import HeaderContent from "./HeaderContent";
+import SearchBar from "./SearchBar";
 import HeaderStatic from "./HeaderStatic";
-import BottomSheet from "./BottomSheet";
+import HeaderContent from "./HeaderContent";
 
 export {
   Text,
@@ -14,8 +13,7 @@ export {
   SlideItem,
   Button,
   Space,
-  HeaderContent,
+  SearchBar,
   HeaderStatic,
-  Mcq,
-  BottomSheet,
+  HeaderContent,
 };
