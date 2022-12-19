@@ -1,16 +1,14 @@
-import { useNavigation } from "@react-navigation/native";
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 import { View } from "react-native";
 import { Chips, Mcq, Text } from "../../components/atom";
 import { BottomSheet } from "../../components/atom";
-
-import { Container } from "../../components/molecules";
 import { HeaderLogin } from "../../components/organism";
-
-// import styles from "./styles";
+import { Container } from "../../components/molecules";
 
 const Login = () => {
   const nav: any = useNavigation();
+
   return (
     <Container transculent barStyle="light-content">
       <HeaderLogin />
