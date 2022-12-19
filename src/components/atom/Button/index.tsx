@@ -23,7 +23,7 @@ interface Props {
   textWeight: "reguler" | "bold" | "extrabold" | "semibold";
   icon?: any;
   height?: number;
-  width?: number;
+  width?: number | string;
   textSize?: number;
   style?: ViewStyle | ViewStyle[];
   resizeIcon?: "cover" | "contain" | "stretch" | "repeat" | "center";
@@ -31,6 +31,8 @@ interface Props {
   iconColor?: string;
   widthFull?: boolean;
   paddingHorizontal?: number;
+  borderWidth: number;
+  borderColor: string;
 }
 
 const Component = ({
@@ -52,6 +54,8 @@ const Component = ({
   color,
   widthFull,
   paddingHorizontal,
+  borderWidth,
+  borderColor,
 }: Props) => {
   return (
     <TouchableOpacity
@@ -66,6 +70,8 @@ const Component = ({
           borderRadius: borderRadius || 30,
           backgroundColor: color || COLORS.blue00,
           paddingHorizontal: paddingHorizontal,
+          borderWidth: borderWidth,
+          borderColor: borderColor,
         },
         style,
         disabled && { backgroundColor: COLORS.greyCE },
@@ -109,6 +115,8 @@ Component.defaultProps = {
   textWeight: "semibold",
   resizeIcon: "cover",
   textColor: COLORS.white,
+  borderWidth: 0,
+  borderColor: COLORS.blue00,
 };
 
 export default memo(Component);

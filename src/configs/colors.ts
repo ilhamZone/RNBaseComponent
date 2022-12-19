@@ -16,6 +16,7 @@ const colors = {
   succesLight1: "#09B95A",
   dangerBase: "#D92037",
   orangeBase: "#FF9E16",
+  yellowFF: "#FFCE00",
 };
 
 export default colors;

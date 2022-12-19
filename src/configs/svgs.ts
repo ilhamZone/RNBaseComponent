@@ -6,6 +6,7 @@ import IconNavProfile from "../assets/svgs/ic24_navbar_profil.svg";
 import IconNavPurchase from "../assets/svgs/ic24_navbar_pembelian.svg";
 import IconCheck from "../assets/svgs/ic24_check.svg";
 import IconClose from "../assets/svgs/ic24_x.svg";
+import Check from "../assets/svgs/check.svg";
 
 export {
   ChevronLeft,
@@ -16,4 +17,5 @@ export {
   IconNavPurchase,
   IconCheck,
   IconClose,
+  Check,
 };

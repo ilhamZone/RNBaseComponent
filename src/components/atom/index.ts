@@ -7,6 +7,8 @@ import Mcq from "./Mcq";
 import HeaderContent from "./HeaderContent";
 import HeaderStatic from "./HeaderStatic";
 import BottomSheet from "./BottomSheet";
+import Toast from "./Toast";
+import CheckBox from "./CheckBox";
 
 export {
   Text,
@@ -18,4 +20,6 @@ export {
   HeaderStatic,
   Mcq,
   BottomSheet,
+  Toast,
+  CheckBox,
 };
