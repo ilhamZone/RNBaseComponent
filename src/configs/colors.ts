@@ -20,7 +20,7 @@ const colors = {
   neutral20: "#E7EBEE",
   orange: "#FFF7D7 ",
   succesLight1: "#09B95A",
-  neutral80: "#F5F7F9",
+  neutral80: "#4D545C",
   primaryLight3: "#EFF7FF",
   primarybase: "#0055B8",
   secondaryLight2: "#FFF7D7",
@@ -31,8 +31,6 @@ const colors = {
   secondaryLight1: "#FFE784",
   warningBase: "#FF862F",
   orangeBase: "#FF9E16",
-  neutral80: "#4D545C",
-  primaryLight3: "#EFF7FF",
 };
 
 export default colors;
