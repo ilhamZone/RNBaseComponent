@@ -14,6 +14,7 @@ import CheckBox from "./CheckBox";
 import Chips from "./Chips";
 import Mcq from "./Mcq";
 import HeaderContent from "./HeaderContent";
+import ItemMenuLearn from "./ItemMenuLearn";
 
 export {
   Text,
@@ -32,4 +33,5 @@ export {
   CheckBox,
   Chips,
   HeaderContent,
+  ItemMenuLearn,
 };

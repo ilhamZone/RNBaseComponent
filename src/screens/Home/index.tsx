@@ -2,14 +2,16 @@ import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import { View } from "react-native";
 import {
+  BottomSheet,
   CheckBox,
   HeaderStatic,
+  ItemMenuLearn,
   Space,
   Text,
   Toast,
 } from "../../components/atom";
 import { Container, PopUp } from "../../components/molecules";
-import { COLORS } from "../../configs";
+import { COLORS, ICONS } from "../../configs";
 import { Robot1 } from "../../configs/svgs";
 
 const Home = () => {
@@ -18,6 +20,7 @@ const Home = () => {
   const [openToast, setOpenToast] = useState(false);
   const [checked, setChecked] = useState(false);
   const [popUp, setPopUp] = useState(false);
+  const [bottomSheet, setBottomSheet] = useState(false);
 
   return (
     <Container transculent barStyle="light-content">
@@ -37,9 +40,13 @@ const Home = () => {
         }}
       >
         <Space height={20} />
+        <ItemMenuLearn iconMenu={ICONS.ic56MapelMatematika} />
+        <Space height={20} />
         <Text onPress={() => setPopUp(true)}>Pop Up</Text>
         <Space height={20} />
         <Text onPress={() => setOpenToast(true)}>Toast</Text>
+        <Space height={20} />
+        <Text onPress={() => setBottomSheet(true)}>BottomSheet</Text>
         <Space height={20} />
         <CheckBox
           type="small"
@@ -62,6 +69,12 @@ const Home = () => {
         onClose={() => setPopUp(false)}
         description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, excepturi?"
       />
+      <BottomSheet
+        isVisible={bottomSheet}
+        onSwipeComplete={() => setBottomSheet(false)}
+      >
+        <Text>okokok</Text>
+      </BottomSheet>
     </Container>
   );
 };

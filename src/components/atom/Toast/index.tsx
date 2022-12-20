@@ -94,7 +94,12 @@ const Component = ({
             </TouchableOpacity>
           ) : (
             <TouchableOpacity activeOpacity={0.8} onPress={onClose}>
-              <IconClose height={17} width={17} stroke={_type().color} />
+              <IconClose
+                height={17}
+                width={17}
+                stroke={_type().color}
+                strokeWidth={2}
+              />
             </TouchableOpacity>
           )}
         </View>

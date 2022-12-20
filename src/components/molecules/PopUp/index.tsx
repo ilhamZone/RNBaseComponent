@@ -62,7 +62,12 @@ const Component = ({
           onPress={onClose}
           style={{ position: "absolute", right: 16, top: 16 }}
         >
-          <IconClose height={24} width={24} stroke={COLORS.greyA5} />
+          <IconClose
+            height={24}
+            width={24}
+            stroke={COLORS.greyA5}
+            strokeWidth={2}
+          />
         </TouchableOpacity>
         {svgComponent && (
           <>
