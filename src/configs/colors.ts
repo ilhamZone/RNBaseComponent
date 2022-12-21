@@ -31,6 +31,7 @@ const colors = {
   secondaryLight1: "#FFE784",
   warningBase: "#FF862F",
   orangeBase: "#FF9E16",
+  yellowFF: "#FFCE00",
 };
 
 export default colors;

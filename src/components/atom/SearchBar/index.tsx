@@ -1,57 +1,63 @@
 import React, { memo } from "react";
-import { View, ViewStyle, SafeAreaView } from "react-native";
+import { View, TextInput, TouchableOpacity } from "react-native";
 import { COLORS } from "../../../configs";
-import { SearchBar } from "@rneui/themed";
+import { Ic24SearchBlue, IconClose } from "../../../configs/svgs";
+import Text from "../Text";
+import styles from "./styles";
 
 interface Props {
-  color: string;
-  style?: ViewStyle | ViewStyle[];
-  onFocus?: () => any;
+  value: string;
+  placeholder: string;
+  cancelLabel: string;
   onChangeText?: (e: string) => void;
-  value?: string;
-  platform: "default";
+  onCancel?: () => void;
+  onClear?: () => void;
 }
-const Component = ({ style, color, onFocus, onChangeText, value }: Props) => {
+const Component = ({
+  value,
+  placeholder,
+  cancelLabel,
+  onChangeText,
+  onCancel,
+  onClear,
+}: Props) => {
   return (
-    <>
-      <View>
-        <SafeAreaView>
-          <SearchBar
-            inputStyle={{
-              backgroundColor: "#F5F7F9",
-              display: "flex",
-              flexDirection: "row",
-            }}
-            inputContainerStyle={{
-              backgroundColor: "#F5F7F9",
-              borderRadius: 30,
-            }}
-            placeholder={"Cari"}
-            round
-            lightTheme
-            cancelButtonTitle="Batal"
-            searchIcon={{ color: "blue", size: 30 }}
-            clearIcon={{ color: "gray", size: 20 }}
-            onChangeText={onChangeText}
-            style={[
-              {
-                color,
-                margin: 0,
-              },
-              style,
-            ]}
-            containerStyle={[{ backgroundColor: "blue" }]}
-            onFocus={onFocus}
-            value={value}
-          />
-        </SafeAreaView>
+    <View style={styles.container}>
+      <View style={styles.wrapInput}>
+        <Ic24SearchBlue />
+        <TextInput
+          placeholder={placeholder}
+          style={styles.inputStyle}
+          selectionColor={COLORS.black1D}
+          placeholderTextColor={COLORS.greyA5}
+          onChangeText={onChangeText}
+          value={value}
+        />
+        {value && onClear && (
+          <TouchableOpacity activeOpacity={0.5} onPress={onClear}>
+            <IconClose
+              stroke={COLORS.grey86}
+              height={16}
+              width={16}
+              strokeWidth={3}
+            />
+          </TouchableOpacity>
+        )}
       </View>
-    </>
+      {onCancel && (
+        <TouchableOpacity onPress={onCancel} style={{ marginLeft: 12 }}>
+          <Text color={COLORS.blue00} size={14}>
+            {cancelLabel}
+          </Text>
+        </TouchableOpacity>
+      )}
+    </View>
   );
 };
 Component.defaultProps = {
-  platform: "default",
-  color: COLORS.black1D,
+  placeholder: "Search something..",
+  value: "",
+  cancelLabel: "Batal",
 };
 
 export default memo(Component);

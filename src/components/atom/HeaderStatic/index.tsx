@@ -71,7 +71,12 @@ const Component = ({
     >
       {leftIcon === "close" ? (
         <TouchableOpacity onPress={onPressLeftIcon}>
-          <IconClose stroke={leftIconColor} height={26} width={26} />
+          <IconClose
+            stroke={leftIconColor}
+            height={26}
+            width={26}
+            strokeWidth={2}
+          />
         </TouchableOpacity>
       ) : (
         <TouchableOpacity onPress={onPressLeftIcon}>

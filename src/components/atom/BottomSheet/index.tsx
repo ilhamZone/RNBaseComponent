@@ -1,56 +1,56 @@
-import React, { memo, useState } from "react";
-import { BottomSheet, Button, ListItem } from "@rneui/themed";
-import { StyleSheet, View } from "react-native";
+import React, { memo } from "react";
+import { View, ViewStyle } from "react-native";
+import Modal from "react-native-modal";
 
-const Component = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const list = [
-    {
-      title: "Cancel",
-      containerStyle: {
-        backgroundColor: "white",
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
-      },
-      onPress: () => setIsVisible(false),
-    },
-  ];
+import { heightPercent } from "../../../utils/helpers";
 
-  return (
-    <View>
-      <BottomSheet modalProps={{}} isVisible={isVisible}>
-        {list.map((l, i) => (
-          <ListItem
-            key={i}
-            containerStyle={l.containerStyle}
-            onPress={l.onPress}
-          >
-            <ListItem.Content>
-              <Button buttonStyle={styles.button} />
-              <ListItem.Title></ListItem.Title>
-            </ListItem.Content>
-          </ListItem>
-        ))}
-      </BottomSheet>
-      <View
-        style={{ width: 64, height: 10, marginBottom: 20, borderRadius: 20 }}
-      >
-        <Button onPress={() => setIsVisible(true)} />
-      </View>
+import styles from "./styles";
+import { COLORS } from "../../../configs";
+
+interface Props {
+  children: React.ReactNode;
+  isVisible: boolean;
+  onSwipeComplete: () => void | undefined;
+  onBackdropPress: () => void | undefined;
+  height: number | any;
+  lineStyle?: ViewStyle | ViewStyle[];
+  maxHeight?: number;
+}
+
+const Component = ({
+  isVisible,
+  onSwipeComplete,
+  onBackdropPress,
+  children,
+  height,
+  lineStyle,
+  maxHeight,
+}: Props) => (
+  <Modal
+    testID="modal"
+    isVisible={isVisible}
+    onBackdropPress={onBackdropPress}
+    onSwipeComplete={onSwipeComplete}
+    swipeDirection={["down"]}
+    onBackButtonPress={onSwipeComplete}
+    propagateSwipe
+    backdropColor={COLORS.black1D}
+    backdropOpacity={0.5}
+    style={styles.wrapper}
+  >
+    <View style={[styles.innerWrap, { height, maxHeight }]}>
+      <View style={[styles.line, lineStyle]} />
+      {children}
     </View>
-  );
-};
+  </Modal>
+);
 
-const styles = StyleSheet.create({
-  button: {
-    height: 3,
-    width: 100,
-    margin: 10,
-    marginLeft: 170,
-    borderRadius: 10,
-    marginBottom: 5,
-    alignContent: "center",
-  },
-});
+Component.defaultProps = {
+  isVisible: false,
+  onSwipeComplete: undefined,
+  onBackdropPress: undefined,
+  height: 400,
+  maxHeight: heightPercent(100),
+};
 
 export default memo(Component);

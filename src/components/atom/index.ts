@@ -9,10 +9,13 @@ import Card from "./Card";
 import Ribbon from "./Ribbon";
 import TextInput from "./TextInput";
 import BottomSheet from "./BottomSheet";
+import Toast from "./Toast";
+import CheckBox from "./CheckBox";
 import Chips from "./Chips";
 import Mcq from "./Mcq";
 import HeaderContent from "./HeaderContent";
 import SelectedBar from "./SelectedBar";
+import ItemMenuLearn from "./ItemMenuLearn";
 
 export {
   Text,
@@ -27,7 +30,10 @@ export {
   Card,
   Mcq,
   BottomSheet,
+  Toast,
+  CheckBox,
   Chips,
   HeaderContent,
   SelectedBar,
+  ItemMenuLearn,
 };
