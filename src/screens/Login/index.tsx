@@ -1,27 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
+import { TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { View } from "react-native";
-import { Text } from "../../components/atom";
-
+import { SelectedBar, Text } from "../../components/atom";
+import { SearchBar } from "../../components/atom";
 import { Container } from "../../components/molecules";
-import { HeaderLogin } from "../../components/organism";
 
 const Login = () => {
   const nav: any = useNavigation();
+  const [search, setSearch] = useState("");
 
   return (
-    <Container transculent barStyle="light-content">
-      <HeaderLogin />
-      <View
-        style={{
-          justifyContent: "center",
-          alignItems: "center",
-          marginHorizontal: 30,
-          flex: 1,
-        }}
-      >
-        <Text onPress={() => nav.navigate("HomeNavigation")}>To Home</Text>
-      </View>
+    <Container>
+      <SearchBar value={search} onChangeText={text => setSearch(text)} />
+      <TouchableOpacity onPress={() => nav.navigate("Home")}>
+        <Text size={20} type="bold">
+          Login
+        </Text>
+        <SelectedBar size="big" />
+      </TouchableOpacity>
     </Container>
   );
 };
