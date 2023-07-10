@@ -9,6 +9,8 @@ import IconNavProfile from "../assets/svgs/ic24_navbar_profil.svg";
 import IconNavPurchase from "../assets/svgs/ic24_navbar_pembelian.svg";
 import Ic24CheckCircleBlue from "../assets/svgs/ic24_check_circle_blue.svg";
 import IconCheck from "../assets/svgs/ic24_check.svg";
+import IconEyeInvisible from "../assets/svgs/eyeInvisible.svg";
+import IconEyeVisible from "../assets/svgs/eyeVisible.svg";
 
 export {
   ChevronLeft,
@@ -22,4 +24,6 @@ export {
   Check,
   Ic24CheckCircleBlue,
   Ic24SearchBlue,
+  IconEyeInvisible,
+  IconEyeVisible,
 };

@@ -1,70 +1,104 @@
-import React, { memo, ReactNode, useState } from "react";
+import React, { memo, useState } from "react";
 import { TextInput, ViewStyle, View } from "react-native";
 import { COLORS } from "../../../configs";
-import { widthPercent } from "../../../utils/helpers";
 import styles from "./styles";
+import Text from "../Text";
+import { IconEyeInvisible, IconEyeVisible } from "../../../configs/svgs";
 
 interface Props {
-  style?: ViewStyle | ViewStyle[];
-  placeHolder?: string;
-  leftIcon?: ReactNode;
-  rightIcon?: ReactNode;
-  error?: boolean;
-  success?: boolean;
-  inputMessage?: ReactNode;
+  type: "text" | "password" | "textarea" | "number";
   value: string;
   onChange: (e: any) => void;
+  style?: ViewStyle | ViewStyle[];
+  placeHolder?: string;
+  onBlur?: () => void;
+  errorMessage?: any;
+  label?: string;
 }
 
 const Component = ({
   style,
   placeHolder,
-  leftIcon,
-  rightIcon,
-  inputMessage,
-  error,
-  success,
+  onBlur,
+  onChange,
+  errorMessage,
+  type,
+  label,
+  value,
 }: Props) => {
-  const [inputFocus, setInputFocus] = useState(false);
+  const [inputVisible, setInputVisible] = useState(false);
 
-  const handleBorderColor = () => {
-    if (success) return COLORS.successLight;
-    if (error) return COLORS.dangerBase;
-    if (inputFocus) return COLORS.primaryBase;
-    return "transparent";
+  const renderIconVisible = () => {
+    if (type === "password" && inputVisible) {
+      return (
+        <IconEyeVisible
+          width={20}
+          height={20}
+          style={{ marginRight: 8 }}
+          onPress={() => setInputVisible(!inputVisible)}
+        />
+      );
+    }
+    if (type === "password" && !inputVisible) {
+      return (
+        <IconEyeInvisible
+          width={20}
+          height={20}
+          style={{ marginRight: 8 }}
+          onPress={() => setInputVisible(!inputVisible)}
+        />
+      );
+    }
+    return null;
   };
 
   return (
-    <>
+    <View>
+      {label ? <Text style={{ marginBottom: 2 }}>{label}</Text> : null}
       <View
         style={[
           styles.container,
           {
-            borderWidth: 1,
-            borderColor: handleBorderColor(),
+            borderWidth: 0.5,
+            borderColor: COLORS.greyA5,
+            borderRadius: 8,
           },
           style,
         ]}
       >
-        <View style={styles.iconLeft}>{leftIcon}</View>
         <TextInput
-          onFocus={() => setInputFocus(true)}
-          onBlur={() => setInputFocus(false)}
+          onBlur={onBlur}
           placeholder={placeHolder}
-          style={styles.input}
+          style={[
+            styles.input,
+            type === "textarea" && { minHeight: 64, maxHeight: 140 },
+          ]}
           placeholderTextColor={COLORS.Neeutral50}
+          onChangeText={onChange}
+          multiline={type === "textarea"}
+          secureTextEntry={type === "password" && !inputVisible}
+          value={value}
+          keyboardType={type === "number" ? "numeric" : "default"}
         />
-        <View style={styles.iconRight}>{rightIcon}</View>
+        {renderIconVisible()}
       </View>
-      <View style={style}>{inputMessage}</View>
-    </>
+      {errorMessage ? (
+        <Text
+          style={{ marginTop: 2 }}
+          size={12}
+          color={COLORS.dangerBase}
+          textAlign="left"
+        >
+          {errorMessage}
+        </Text>
+      ) : null}
+    </View>
   );
 };
 
 Component.defaultProps = {
-  style: {
-    width: widthPercent(90),
-  },
+  textArea: false,
+  type: "text",
 };
 
 export default memo(Component);

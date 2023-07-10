@@ -11,6 +11,10 @@ import BottomSheet from "./BottomSheet";
 import Toast from "./Toast";
 import CheckBox from "./CheckBox";
 import HeaderContent from "./HeaderContent";
+import DropDownPicker from "./DropDownPicker";
+import RadioGroup from "./RadioGroup";
+import RadioButton from "./RadioButton";
+import RangeSlider from "./RangeSlider";
 
 export {
   Text,
@@ -26,4 +30,8 @@ export {
   Toast,
   CheckBox,
   HeaderContent,
+  DropDownPicker,
+  RadioGroup,
+  RadioButton,
+  RangeSlider,
 };
