@@ -31,20 +31,8 @@ const inputSchema = Yup.object().shape({
   ktp: Yup.string().required("KTP is required"),
   multi_select: Yup.array().min(1, "Select at least one option!"),
   range: Yup.number().required("Range Required").moreThan(0),
+  time: Yup.string().required("Time Required"),
 });
-
-// const inputSchema2 = Yup.object().shape({
-//   name: Yup.string(),
-//   email: Yup.string().email("Format email invalid"),
-//   address: Yup.string(),
-//   fruit: Yup.string(),
-//   hobbies: Yup.array(),
-//   gender: Yup.string(),
-//   date: Yup.string(),
-//   password: Yup.string(),
-//   ktp: Yup.string(),
-//   multi_select: Yup.array(),
-// });
 
 const items = [
   { label: "Apple", value: "apple" },
@@ -114,6 +102,7 @@ const Home = () => {
           ktp: "",
           multi_select: [],
           range: 0,
+          time: "",
         }}
         validationSchema={inputSchema}
         onSubmit={() => {
@@ -178,6 +167,15 @@ const Home = () => {
               onDateChange={(value: any) => setFieldValue("date", value)}
               value={values.date}
               errorMessage={touched.date && errors.date && errors.date}
+              mode="date"
+            />
+            <Space height={12} />
+            <DatePicker
+              label="Time"
+              onDateChange={(value: any) => setFieldValue("time", value)}
+              value={values.time}
+              errorMessage={touched.time && errors.time && errors.time}
+              mode="time"
             />
             <Space height={12} />
             <TextInput
@@ -208,6 +206,7 @@ const Home = () => {
               errorMessage={touched.ktp && errors.ktp && errors.ktp}
               type="number"
             />
+            <Space height={12} />
             <View style={{ marginTop: 12, marginBottom: 8 }}>
               <Text>Hobbies</Text>
               <Space height={2} />

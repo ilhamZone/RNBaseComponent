@@ -19,6 +19,7 @@ interface Props {
   placeholder?: string;
   errorMessage?: any;
   label?: string;
+  mode: "time" | "date";
 }
 
 const Component = ({
@@ -27,8 +28,9 @@ const Component = ({
   placeholder,
   errorMessage,
   label,
+  mode,
 }: Props) => {
-  const [date, setDate]: any = useState();
+  const [date, setDate]: any = useState(new Date());
   const [show, setShow] = useState(false);
 
   const onChange = (_: any, selectedDate: any) => {
@@ -37,19 +39,49 @@ const Component = ({
 
   const onAndroidChange = (_: any, selectedDate: any) => {
     setShow(false);
-    if (selectedDate) {
+    if (mode === "time") {
+      const time = moment(date).format("HH:mm");
+      onDateChange(time);
+    } else if (selectedDate) {
       setDate(new Date(selectedDate));
       onDateChange(new Date(selectedDate));
     }
   };
 
   const onCancelPress = () => {
-    date && setDate(new Date(date));
+    if (mode === "time" && value) {
+      const timeArr = value.split(":");
+      const current = new Date();
+      current.setHours(Number(timeArr[0]));
+      current.setMinutes(Number(timeArr[1]));
+      setDate(current);
+    } else {
+      date && setDate(new Date(date));
+    }
     setShow(false);
   };
   const onDonePress = () => {
-    onDateChange(date || new Date());
+    if (mode === "time") {
+      const time = moment(date).format("HH:mm");
+      onDateChange(time);
+    } else {
+      onDateChange(date || new Date());
+    }
     setShow(false);
+  };
+
+  const valueDate = () => {
+    if (mode === "date" && value) return value;
+    if (mode === "time" && date) return date;
+    return date;
+  };
+
+  const renderText = () => {
+    const placeholderText =
+      mode === "time" ? placeholder || "Pick time" : placeholder || "Pick Date";
+    if (mode === "date" && value) return moment(value).format("DD / MM / YYYY");
+    if (mode === "time" && date && value) return moment(date).format("HH:mm");
+    return placeholderText;
   };
 
   const renderDatePicker = () => {
@@ -57,9 +89,8 @@ const Component = ({
       <>
         <DateTimePicker
           display={Platform.OS === "ios" ? "spinner" : "default"}
-          timeZoneOffsetInMinutes={0}
-          value={value || new Date()}
-          mode="date"
+          value={valueDate()}
+          mode={mode}
           minimumDate={new Date(1920, 10, 20)}
           onChange={Platform.OS === "ios" ? onChange : onAndroidChange}
         />
@@ -78,7 +109,7 @@ const Component = ({
               { color: value ? COLORS.black1D : COLORS.greyA5 },
             ]}
           >
-            {value ? moment(value).format("DD / MM / YYYY") : placeholder}
+            {renderText()}
           </Text>
           {Platform.OS !== "ios" && show && renderDatePicker()}
 
@@ -133,7 +164,8 @@ const Component = ({
 };
 
 Component.defaultProps = {
-  placeholder: "Pick date",
+  placeholder: "",
+  mode: "date",
 };
 
 export default Component;
