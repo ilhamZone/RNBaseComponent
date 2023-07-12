@@ -139,7 +139,7 @@ const Home = () => {
               label="Fruit"
               data={items}
               maxHeight={240}
-              placeholder="Select item"
+              placeholder="Select an item"
               value={values.fruit}
               onChange={item => setFieldValue("fruit", item.value)}
               errorMessage={touched.fruit && errors.fruit && errors.fruit}
